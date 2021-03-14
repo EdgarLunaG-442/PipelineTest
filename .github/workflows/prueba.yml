@@ -1,0 +1,17 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Mi primer Workflow
+on:
+  push:
+    branches: [master]
+job:
+  Mi-Primer-Job:
+    name: Mi Primer Job
+    runs-on: ubuntu-latest
+    steps:
+      -name: Imprimir Hola Mundo
+      env: 
+        MI_VARIABLE: Hola Mundo
+      run: |
+        echo $MI_VARIABLE
+  

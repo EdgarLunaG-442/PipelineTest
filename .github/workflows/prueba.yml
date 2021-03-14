@@ -1,17 +1,18 @@
 # This is a basic workflow to help you get started with Actions
+name: Example
 
-name: Mi primer Workflow
-on:
-  push:
-    branches: [master]
+on: push
+
 jobs:
-  Mi-Primer-Job:
-    name: Mi Primer Job
+  echo:
     runs-on: ubuntu-latest
-    steps:
-      - name: Imprimir Hola Mundo
-        env: 
-          MI_VARIABLE: Hola Mundo
-        run: |
-          echo $MI_VARIABLE.
+steps:
+  - name: Leer prueba.txt
+    id: Prueba
+    with:
+      path: ./Prueba.txt
+  - name: Echo Prueba.txt
+    env:
+      TEXT: ${{steps.Prueba.outputs.Prueba}}
+    run: echo $TEXT
   

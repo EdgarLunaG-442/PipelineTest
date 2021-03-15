@@ -10,13 +10,12 @@ jobs:
     name: Mi Segundo Job
     runs-on: ubuntu-latest
     steps:
-      - name: Leer prueba.txt
+      - run: echo -n -e "HELLO\n !\n World!" > Prueba.txt
       - uses: actions/checkout@v2
         id: Prueba
         with:
           path: ./Prueba.txt
-      - name: Echo Prueba.txt
+      - run: echo $TEXT
         env:
           TEXT: ${{steps.Prueba.outputs.Prueba}}
-      - run: echo $TEXT
   

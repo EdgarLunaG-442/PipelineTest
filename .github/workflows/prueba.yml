@@ -32,6 +32,8 @@ jobs:
     - name: crear rama release
       run: |
         git branch release
+        git checkout release
+        git push --set-upstream origin release
     - name: Correr pruebas
       id: correr-pruebas
       run: python -m unittest -v tests/test_persona.py

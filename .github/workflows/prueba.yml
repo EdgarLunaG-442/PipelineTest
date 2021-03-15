@@ -56,3 +56,8 @@ jobs:
           from_branch: release
           target_branch: master
           github_token: ${{ github.token }}
+      - name: borrar rama release
+        uses: dawidd6/action-delete-branch@v3
+        with:
+          github_token: ${{github.token}}
+          branches: release

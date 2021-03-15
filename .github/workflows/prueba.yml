@@ -30,7 +30,8 @@ jobs:
       with:
         ref: ramaPrueba
     - name: crear rama release
-      run: git branch release
+      run: |
+        git branch -b release
     - name: Correr pruebas
       id: correr-pruebas
       run: python -m unittest -v tests/test_persona.py

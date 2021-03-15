@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Leer prueba.txt
+      - uses: actions/checkout@v2
         id: Prueba
         with:
           path: ./Prueba.txt
-      - uses: actions/checkout@v2
       - name: Echo Prueba.txt
         env:
           TEXT: ${{steps.Prueba.outputs.Prueba}}
-        run: echo $TEXT
+      - run: echo $TEXT
   
